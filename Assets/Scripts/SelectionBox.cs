@@ -33,24 +33,24 @@ public class SelectionBox : MonoBehaviour {
 
         if(Input.GetMouseButton(0))
         {
-            if(!selectSquareImage.gameObject.activeInHierarchy)
-            {
-                selectSquareImage.gameObject.SetActive(true);
-            }
-
             endPos = Input.mousePosition;
 
             Vector3 squareStart = Camera.main.WorldToScreenPoint(startPos);
             squareStart.z = 0f;
 
-            Vector3 centre = (squareStart + endPos) / 2f;
-
-            selectSquareImage.position = centre;
-
             float sizeX = Mathf.Abs(squareStart.x - endPos.x);
             float sizeY = Mathf.Abs(squareStart.y - endPos.y);
 
             selectSquareImage.sizeDelta = new Vector2(sizeX, sizeY);
+
+            Vector3 centre = (squareStart + endPos) / 2f;
+
+            selectSquareImage.position = centre;
+
+            if (!selectSquareImage.gameObject.activeInHierarchy)
+            {
+                selectSquareImage.gameObject.SetActive(true);
+            }
         }
 	}
 }
