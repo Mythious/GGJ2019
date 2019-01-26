@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 4ab782d7327c18a4ba7d95ccf6fc2bac, type: 2}
+  - {fileID: 2100000, guid: c48a204457d0d964581853ddce04c24c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,12 +106,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593410935684236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9c17475f883184eadbdd0fa3906bdb, type: 3}
+  m_Script: {fileID: 11500000, guid: a34cc3e560c29b9488e26fe9ad1be2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PersonPrefab: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
-    type: 2}
-  NumPeopleToSpawn: 5
+  PersonPrefab: {fileID: 0}
+  NumPeopleToSpawn: 0
 --- !u!114 &114993723963033828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c232178c995946247af085779abd9c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectionButtonPressed: 0
   inRadius: 10
   outRadius: 30
   BuildTime: 2
