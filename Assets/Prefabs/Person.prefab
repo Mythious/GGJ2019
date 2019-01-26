@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114956053809904284}
   - component: {fileID: 195624897532459134}
   - component: {fileID: 114378400773443084}
+  - component: {fileID: 114472397845530050}
   m_Layer: 9
   m_Name: Person
   m_TagString: Worker
@@ -267,7 +268,7 @@ MonoBehaviour:
   nodeHarvesting: {fileID: 0}
 --- !u!114 &114472397845530050
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164426893280470}
