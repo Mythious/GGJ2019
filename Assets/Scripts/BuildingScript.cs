@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingScript : MonoBehaviour
 {
-
+    public bool selectionButtonPressed = false;
 
     [Header("Build param")]
     public float inRadius = 10;
@@ -34,7 +34,8 @@ public class BuildingScript : MonoBehaviour
     void Update()
     {
         //Shows building zones
-        if (Input.GetKey(KeyCode.S))
+        //if (Input.GetKey(KeyCode.S))
+        if (selectionButtonPressed)
         {
             _radiusIndicators[0].SetActive(true);
             _radiusIndicators[1].SetActive(true);

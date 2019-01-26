@@ -42,7 +42,7 @@ public class BuildingPlacementManager : MonoBehaviour
         }
     }
 
-    void AddBuilding(GameObject prefab, Vector3 position)
+    public void AddBuilding(GameObject prefab, Vector3 position)
     {
         BuildingScript bs = prefab.GetComponent<BuildingScript>();//heh
         if (bs == null || !CanBuild(position, bs.inRadius, bs.outRadius))
