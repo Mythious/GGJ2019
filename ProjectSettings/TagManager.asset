@@ -6,6 +6,8 @@ TagManager:
   tags:
   - house
   - Terrain
+  - MapManager
+  - Worker
   layers:
   - Default
   - TransparentFX

@@ -53,8 +53,8 @@ public class BuildingPlacementManager : MonoBehaviour
             //TODO:: Sound "NOPE"
             return;
         }
-        var newBuilding = GameObject.Instantiate(prefab, transform);
-        newBuilding.transform.position = position + new Vector3(0, newBuilding.transform.localScale.y / 2, 0);
+        var newBuilding = GameObject.Instantiate(prefab, null);
+        newBuilding.transform.position = position + new Vector3(0, 0, 0);
         buildings.Add(newBuilding);
     }
 
