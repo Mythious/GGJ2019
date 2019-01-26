@@ -118,6 +118,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
     type: 2}
   m_PrefabInternal: {fileID: 2108474545}
+--- !u!114 &460493669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460493668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdddfed98b8a6749abb50f30bbc0ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  playerAgent: {fileID: 460493674}
 --- !u!114 &460493670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,21 +172,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &460493675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 460493668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef5017f9b89e4a4197222abd92e38db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  playerAgent: {fileID: 460493674}
 --- !u!54 &460493676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f2c4c1a08a8f6404aba8bd2535d97a5b, type: 2}
+  - {fileID: 2100000, guid: b9f3fc0879ce1a547bd74d043c5b6c58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

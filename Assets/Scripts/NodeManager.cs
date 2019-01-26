@@ -1,16 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.ResourceTypes;
 
 public class NodeManager : MonoBehaviour
 {
-
-    public enum ResourceTypes
-    {
-        FOOD,
-        WOOD,
-        STONE
-    }
     public ResourceTypes resourceType;
     public float harvestTime;
     public float availableResource;
@@ -20,7 +14,7 @@ public class NodeManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("GatherResource");
+        StartCoroutine("ResourceTick");
     }
 
     // Update is called once per frame
@@ -36,18 +30,17 @@ public class NodeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         GatherResource();
-
-
     }
 
     public void GatherResource()
     {
-        while (true)
-        {
-            if (harvesting)
-            {
-                availableResource--;
-            }
-        }
+        //while (true)
+        //{
+        //    if (harvesting)
+        //    {
+        //        availableResource--;
+        //        ResourceManager.AddResource(resourceType, 1);
+        //    }
+        //}
     }
 }
