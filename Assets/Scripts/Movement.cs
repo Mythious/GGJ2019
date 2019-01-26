@@ -20,19 +20,15 @@ public class Movement : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(1))
             {
-                playerAgent.SetDestination(GetPointUnderCursor());
+                RaycastHit hitPosition;
+
+                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitPosition, Mathf.Infinity, groundLayer))
+                {
+                    playerAgent.SetDestination(hitPosition.point);
+                }
             }
         }
 	}
-
-    private Vector3 GetPointUnderCursor()
-    {
-        RaycastHit hitPosition;
-
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitPosition, Mathf.Infinity, groundLayer);
-
-        return hitPosition.point;
-    }
 
     public void Selected(bool pSelected)
     {

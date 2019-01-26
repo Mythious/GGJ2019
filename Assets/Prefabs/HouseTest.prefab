@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23891880100173992}
   - component: {fileID: 65543009184475474}
   - component: {fileID: 114993723963033828}
+  - component: {fileID: 114124535161403704}
   m_Layer: 0
   m_Name: HouseTest
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593410935684236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.27, z: -16.69}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,11 +93,25 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593410935684236}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114124535161403704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593410935684236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9c17475f883184eadbdd0fa3906bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersonPrefab: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
+    type: 2}
+  NumPeopleToSpawn: 5
 --- !u!114 &114993723963033828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inRadius: 10
   outRadius: 30
+  BuildTime: 2
   innerSphere: {fileID: 1524763693140896, guid: 03adbc96875c9cd409f90dad61ae7f33,
     type: 2}
   outerSphere: {fileID: 1228450837050696, guid: 276f294df11244242aa1efd49692c011,
