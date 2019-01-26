@@ -80,6 +80,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housePrefab:
   - {fileID: 1593410935684236, guid: 23a90fd1c36f6864c824265fa4da1602, type: 2}
+  - {fileID: 1872365406048768, guid: 73ed3210287a9894f8fef8346b4d7a99, type: 2}
   buildings: []
   Radius: 25
   Colour: {r: 0.18177521, g: 1, b: 0, a: 0.30588236}
+  selectionButtonPressed: 0
+  BuildingToBuildIndex: 0
