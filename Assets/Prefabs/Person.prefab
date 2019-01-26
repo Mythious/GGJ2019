@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 23466403017125782}
   - component: {fileID: 136974921323211662}
   - component: {fileID: 54669744984234988}
-  - component: {fileID: 114669321803743664}
-  - component: {fileID: 114472397845530050}
+  - component: {fileID: 114956053809904284}
   - component: {fileID: 195624897532459134}
+  - component: {fileID: 114472397845530050}
   m_Layer: 9
   m_Name: Person
   m_TagString: Untagged
@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164426893280470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 39.302628, y: 1, z: -9.008226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4192058381408350}
@@ -125,7 +125,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: b9f3fc0879ce1a547bd74d043c5b6c58, type: 2}
+  - {fileID: 2100000, guid: 1e7a5e3415a2fb740ac1d053f06bbaa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSelected: 0
   selectionGraphic: {fileID: 1525901042873794}
---- !u!114 &114669321803743664
+--- !u!114 &114956053809904284
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164426893280470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bdddfed98b8a6749abb50f30bbc0ee8, type: 3}
+  m_Script: {fileID: 11500000, guid: dbdd51f88cef95a41ac982089914a4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundLayer:
