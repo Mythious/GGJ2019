@@ -4,16 +4,12 @@ using System.Collections.Generic;
 
 public class OnClick : MonoBehaviour
 {
-
-    public Material green;
-    public Material blank;
-    private MeshRenderer myRend;
     public bool isSelected;
+    public GameObject selectionGraphic;
 
     // Use this for initialization
     void Start()
     {
-        myRend = GetComponent<MeshRenderer>();
         isSelected = false;
         Camera.main.gameObject.GetComponent<ClickDetection>().selectableObjects.Add(this.gameObject);
         Click();
@@ -23,11 +19,11 @@ public class OnClick : MonoBehaviour
     {
         if (isSelected == false)
         {
-            myRend.material = blank;
+            selectionGraphic.SetActive(false);
         }
         else
         {
-            myRend.material = green;
+            selectionGraphic.SetActive(true);
         }
     }
 }

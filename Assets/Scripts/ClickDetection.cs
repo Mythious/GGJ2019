@@ -29,6 +29,7 @@ public class ClickDetection : MonoBehaviour {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickablesLayer))
             {
                 OnClick onClickScript = rayHit.collider.GetComponent<OnClick>();
+                Movement movementScript = rayHit.collider.GetComponent<Movement>();
 
                 if (Input.GetKey("left shift"))
                 {
@@ -37,12 +38,14 @@ public class ClickDetection : MonoBehaviour {
                         selectedObjects.Add(rayHit.collider.gameObject);
                         onClickScript.isSelected = true;
                         onClickScript.Click();
+                        movementScript.Selected(true);
                     }
                     else
                     {
                         selectedObjects.Remove(rayHit.collider.gameObject);
                         onClickScript.isSelected = false;
                         onClickScript.Click();
+                        movementScript.Selected(false);
                     }
                 }
                 else
@@ -52,6 +55,7 @@ public class ClickDetection : MonoBehaviour {
                     selectedObjects.Add(rayHit.collider.gameObject);
                     onClickScript.isSelected = true;
                     onClickScript.Click();
+                    movementScript.Selected(true);
                 }
             }
             else
@@ -93,6 +97,7 @@ public class ClickDetection : MonoBehaviour {
                     selectedObjects.Add(selectedObject);
                     selectedObject.GetComponent<OnClick>().isSelected = true;
                     selectedObject.GetComponent<OnClick>().Click();
+                    selectedObject.GetComponent<Movement>().Selected(true);
                 }
             }
             else
@@ -120,6 +125,7 @@ public class ClickDetection : MonoBehaviour {
                 {
                     obj.GetComponent<OnClick>().isSelected = false;
                     obj.GetComponent<OnClick>().Click();
+                    obj.GetComponent<Movement>().Selected(false);
                 }
             }
             selectedObjects.Clear();
