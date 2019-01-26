@@ -313,7 +313,7 @@ MonoBehaviour:
   nodeHarvesting: {fileID: 0}
 --- !u!114 &114851122548102200
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164426893280470}

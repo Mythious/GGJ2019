@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.ResourceTypes;
+using UnityEngine.AI;
 
 public class Harvester : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Harvester : MonoBehaviour
     public ResourceTypes typeHeld = ResourceTypes.NONE;
     public bool isGathering = false;
     public GameObject nodeHarvesting;
+    public NavMeshAgent playerAgent;
 
     // Use this for initialization
     void Start()
@@ -21,14 +23,21 @@ public class Harvester : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isGathering == true && nodeHarvesting == null)
+        if (isGathering == true)
         {
-            isGathering = false;
-        }
+            if (nodeHarvesting == null)
+            {
+                isGathering = false;
+            }
+             else if (amountHeld >= carryCapacity)
+            {
+                isGathering = false;
+                nodeHarvesting.GetComponent<NodeManager>().gatherers--;
+                //find nearest store
 
-        if (amountHeld >= carryCapacity)
-        {
-            //return to store
+                //return to store
+                //playerAgent.SetDestination()
+            }
         }
     }
 
