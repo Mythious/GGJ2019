@@ -25,6 +25,11 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    public int GetResourceLevel(ResourceTypes type)
+    {
+        return resources[type];
+    }
+
     /// <summary>
     /// Remove some amount of a resource
     /// </summary>
