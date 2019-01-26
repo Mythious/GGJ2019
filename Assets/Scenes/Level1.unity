@@ -1357,7 +1357,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b8b8f535556827743a98697bc1525681, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2135,10 +2135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc0900d01fb9f445b9951e89c145670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_seedTree: 5
-  m_seedRock: 3
-  m_seedBerries: 0
-  spawnChance: 0.3
+  m_seedTree: 3.37
+  m_seedRock: 3.08
+  m_seedBerries: 3.13
+  spawnChanceTree: 0.3
+  spawnChanceBerry: 0.3
+  spawnChanceRock: 0.3
+  BerryToRockRatio: 0.75
   m_terrain: {fileID: 1528600050}
   m_tree: {fileID: 1916738394267678, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
   m_rock: {fileID: 1496930463229012, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
