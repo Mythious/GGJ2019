@@ -10,14 +10,17 @@ public class Harvester : MonoBehaviour
     public int carryCapacity;
     public int amountHeld;
     public ResourceTypes typeHeld = ResourceTypes.NONE;
-    public bool isGathering = false;
-    public GameObject nodeHarvesting;
     public NavMeshAgent playerAgent;
+    public bool isGathering = false;
+    GameObject nodeHarvesting;
+    GameObject MapManager;
 
     // Use this for initialization
     void Start()
     {
+        MapManager = GameObject.FindGameObjectWithTag("MapManager");
         StartCoroutine(GatherTick());
+
     }
 
     // Update is called once per frame
@@ -28,15 +31,21 @@ public class Harvester : MonoBehaviour
             if (nodeHarvesting == null)
             {
                 isGathering = false;
+                StoreManager storeManager = MapManager.GetComponent<StoreManager>();
+                GameObject nearestStore = storeManager.NearestStore(transform.position);
+                Debug.Log("Nearest Store = " + nearestStore.transform.position);
+                //return to store
+                playerAgent.SetDestination(nearestStore.transform.position);
             }
              else if (amountHeld >= carryCapacity)
             {
                 isGathering = false;
                 nodeHarvesting.GetComponent<NodeManager>().gatherers--;
                 //find nearest store
-
+                GameObject nearestStore = MapManager.GetComponent<StoreManager>().NearestStore(transform.position);
+                Debug.Log("Nearest Store = " + nearestStore.transform.position);
                 //return to store
-                //playerAgent.SetDestination()
+                playerAgent.SetDestination(nearestStore.transform.position);
             }
         }
     }
@@ -56,6 +65,10 @@ public class Harvester : MonoBehaviour
             typeHeld = node.resourceType;
             isGathering = true;
         }
+        if (hitObject.tag == "Store")
+        {
+            playerAgent.SetDestination(nodeHarvesting.transform.position);
+        }
     }
 
     public void OnTriggerExit(Collider other)
@@ -64,7 +77,6 @@ public class Harvester : MonoBehaviour
         if (hitObject.tag == "resource")
         {
             NodeManager node = other.GetComponent<NodeManager>();
-            nodeHarvesting = null;
             node.gatherers--;
         }
     }

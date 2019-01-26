@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.ResourceTypes;
 
 public class StoreScript : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class StoreScript : MonoBehaviour
                 {
                     Debug.Log("Depsitiong resources");
                     _resourceManager.AddResource(h.typeHeld, h.amountHeld);
+                    h.amountHeld = 0;
+                    h.typeHeld = ResourceTypes.NONE;
                 }
             }
         }
