@@ -6,7 +6,7 @@ using Assets.Scripts.ResourceTypes;
 public class NodeManager : MonoBehaviour
 {
     public ResourceTypes resourceType;
-    public float harvestTime;
+    public int gatherTick;
     public float availableResource;
 
     public int gatherers;
@@ -39,7 +39,7 @@ public class NodeManager : MonoBehaviour
     {
         if (gatherers > 0)
         {
-            availableResource -= gatherers;
+            availableResource -= gatherers * gatherTick;
         }
     }
 }
