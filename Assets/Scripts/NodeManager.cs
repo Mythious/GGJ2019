@@ -9,12 +9,12 @@ public class NodeManager : MonoBehaviour
     public float harvestTime;
     public float availableResource;
 
-    public bool harvesting;
+    public int gatherers;
 
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("ResourceTick");
+        StartCoroutine(ResourceTick());
     }
 
     // Update is called once per frame
@@ -28,19 +28,18 @@ public class NodeManager : MonoBehaviour
 
     IEnumerator ResourceTick()
     {
-        yield return new WaitForSeconds(1);
-        GatherResource();
+        while (true)
+        {
+            GatherResource();
+            yield return new WaitForSeconds(1);
+        }
     }
 
     public void GatherResource()
     {
-        //while (true)
-        //{
-        //    if (harvesting)
-        //    {
-        //        availableResource--;
-        //        ResourceManager.AddResource(resourceType, 1);
-        //    }
-        //}
+        if (gatherers > 0)
+        {
+            availableResource -= gatherers;
+        }
     }
 }

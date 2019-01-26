@@ -16,7 +16,7 @@ public class NearestObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       GameObject[] gameObjects =  GameObject.FindGameObjectsWithTag("house");
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("house");
         List<Transform> transforms = new List<Transform>();
 
         for (int i = 0; i < gameObjects.Length; i++)
@@ -24,19 +24,17 @@ public class NearestObject : MonoBehaviour
             transforms.Add(gameObjects[i].transform);
         }
 
-
+        Debug.Log("Found objects " + gameObjects.Length);
         Transform tMin = null;
-        float minDist = 0;
         Vector3 currentPos = transform.position;
         foreach (Transform t in transforms)
         {
             float dist = Vector3.Distance(t.position, currentPos);
-                tMin = t;
-                minDist = dist;
+            tMin = t;
         }
 
         Shader.SetGlobalVector("_NearestObjectPosition", tMin.transform.position);
     }
 
-   
+
 }

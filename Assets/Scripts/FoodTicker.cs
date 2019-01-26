@@ -6,7 +6,6 @@ public class FoodTicker : MonoBehaviour
 {
     [Header("Food Attributes")]
     public float FoodPerPerson;
-    public int Population;
     public float TickTime;
 
     [Header("Test Variables")]
@@ -15,10 +14,11 @@ public class FoodTicker : MonoBehaviour
 
 
     private float _timeSinceLastTick = 0;
+    private PopulationScript _popScript;
     // Use this for initialization
     void Start()
     {
-
+        _popScript = GetComponent<PopulationScript>();
     }
 
     // Update is called once per frame
@@ -34,17 +34,19 @@ public class FoodTicker : MonoBehaviour
 
     void TickFood()
     {
-        int foodDepletion = (int)(FoodPerPerson * Population);
+        int foodDepletion = (int)(FoodPerPerson * _popScript.CurrentPopulation());
         Food -= foodDepletion;
         if(Food < 0)
         {
             //KILL DEATH MURDER
             int popDepletion = (int)(Food / FoodPerPerson);
-            Population += popDepletion;
-            Food = 0;
-            if(Population < 0)
+            for(int i = 0; i < Mathf.Abs(popDepletion); i++)
             {
-                Population = 0;
+                _popScript.RemovePop();
+            }
+            Food = 0;
+            if(_popScript.CurrentPopulation() < 0)
+            {
                 //Ya dead son
             }
         }
