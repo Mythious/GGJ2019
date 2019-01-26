@@ -26,7 +26,8 @@ public class ButtonManager : MonoBehaviour
         var clickedButton = EventSystem.current.currentSelectedGameObject;
 
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-        BuildingScript buildScript = camera.GetComponent<BuildingScript>();
+
+        var buildingManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<BuildingPlacementManager>();
 
 
         if (clickedButton.name != "CancelButton")
@@ -35,7 +36,7 @@ public class ButtonManager : MonoBehaviour
             cancelButton.gameObject.SetActive(true);
 
             // enable the building zones
-            buildScript.selectionButtonPressed = true;
+            buildingManager.selectionButtonPressed = true;
         }
 
         switch (clickedButton.name)
@@ -55,7 +56,7 @@ public class ButtonManager : MonoBehaviour
             case "CancelButton":
                 cancelButton.gameObject.SetActive(false);
                 // disable the building zones
-                buildScript.selectionButtonPressed = false;
+                buildingManager.selectionButtonPressed = false;
                 break;
             default:
                 break;

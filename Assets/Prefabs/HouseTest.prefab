@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34cc3e560c29b9488e26fe9ad1be2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PersonPrefab: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
-    type: 2}
-  NumPeopleToSpawn: 5
+  PersonPrefab: {fileID: 0}
+  NumPeopleToSpawn: 0
 --- !u!114 &114993723963033828
 MonoBehaviour:
   m_ObjectHideFlags: 1

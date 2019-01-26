@@ -16,6 +16,10 @@ public class BuildingPlacementManager : MonoBehaviour
     [Header("Gizmo Stuff")]
     public float Radius = 10;
     public Color Colour = new Color(1, 0, 0, 0.1f);
+
+    [HideInInspector]
+    public bool selectionButtonPressed;
+
     // Use this for initialization
     void Start()
     {
@@ -25,7 +29,7 @@ public class BuildingPlacementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (selectionButtonPressed)
         {
             if (Input.GetMouseButtonDown(0))
             {
