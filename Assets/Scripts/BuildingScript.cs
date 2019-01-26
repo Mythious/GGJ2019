@@ -61,12 +61,18 @@ public class BuildingScript : MonoBehaviour
             if (other.gameObject.tag == "Worker")
             {
                 _timeBuilt += 1 * Time.deltaTime;
+                Debug.Log(_timeBuilt);
                 float yScale = (_endYScale / BuildTime) * _timeBuilt;
+                if(yScale < 0.1f)
+                {
+                    yScale = 0.1f;
+                }
                 transform.localScale = new Vector3(transform.localScale.x, yScale, transform.localScale.z);
                 transform.position = new Vector3(transform.position.x, yScale / 2, transform.position.z);
                 if (_timeBuilt > BuildTime)
                 {
                     _built = true;
+                    Debug.Log("Built");
                 }
             }
         }
