@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HouseScript : MonoBehaviour
 {
@@ -38,9 +39,12 @@ public class HouseScript : MonoBehaviour
         for (int i = 0; i < NumPeopleToSpawn; i++)
         {
             float f = angleChange * i;
-            Vector3 pos = new Vector3(Mathf.Cos(f), 1.5f, Mathf.Sin(f)) * _buildingScript.inRadius;
+            Vector3 pos = new Vector3(Mathf.Cos(f), 0, Mathf.Sin(f)) * _buildingScript.inRadius;
+            pos.y = 1.5f;
             var p = GameObject.Instantiate(PersonPrefab);
-            p.transform.position = pos + transform.position;
+            p.GetComponent<NavMeshAgent>().enabled = false;
+            p.transform.position = new Vector3(transform.position.x + pos.x, pos.y, transform.position.z + pos.z);
+            p.GetComponent<NavMeshAgent>().enabled = true;
             popManager.AddPop(p);
         }
     }
