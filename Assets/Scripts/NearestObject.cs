@@ -26,16 +26,13 @@ public class NearestObject : MonoBehaviour
 
 
         Transform tMin = null;
-        float minDist = Mathf.Infinity;
+        float minDist = 0;
         Vector3 currentPos = transform.position;
         foreach (Transform t in transforms)
         {
             float dist = Vector3.Distance(t.position, currentPos);
-            if (dist < minDist)
-            {
                 tMin = t;
                 minDist = dist;
-            }
         }
 
         Shader.SetGlobalVector("_NearestObjectPosition", tMin.transform.position);
