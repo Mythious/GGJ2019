@@ -18,6 +18,10 @@ public class ResourceManager : MonoBehaviour
         {
             resources.Add(e, 0);
         }
+
+        AddResource(ResourceTypes.FOOD, 200);
+        AddResource(ResourceTypes.WOOD, 75);
+        AddResource(ResourceTypes.STONE, 25);
     }
     /// <summary>
     /// Add some amount of a resource

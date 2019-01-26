@@ -55,6 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cf4c8839648e42a070b5097281090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoneText: {fileID: 0}
+  WoodText: {fileID: 0}
+  FoodText: {fileID: 0}
 --- !u!114 &114232683556529774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,8 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodPerPerson: 1
-  TickTime: 3
-  Food: 100
+  TickTime: 10
 --- !u!114 &114674834707858798
 MonoBehaviour:
   m_ObjectHideFlags: 1
