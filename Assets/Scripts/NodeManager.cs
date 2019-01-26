@@ -30,8 +30,6 @@ public class NodeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         GatherResource();
-
-
     }
 
     public void GatherResource()
