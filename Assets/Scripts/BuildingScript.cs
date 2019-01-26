@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingScript : MonoBehaviour
 {
-
+    public bool selectionButtonPressed = false;
 
     [Header("Build param")]
     public float inRadius = 10;
@@ -18,31 +18,35 @@ public class BuildingScript : MonoBehaviour
     private bool _built = false;
     private float _endYScale;
     private float _timeBuilt = 0;
+    private BuildingPlacementManager _buildingPlacementManager;
     // Use this for initialization
     void Start()
     {
         _endYScale = transform.localScale.y;
-        transform.localScale = new Vector3(transform.localScale.x, 0.1f, transform.localScale.z);
+        transform.localScale = new Vector3(transform.localScale.x, 0.5f, transform.localScale.z);
         _radiusIndicators = new GameObject[2];
-        _radiusIndicators[0] = Instantiate(innerSphere, transform);
-        float inScale = inRadius / 5;
+        _radiusIndicators[0] = Instantiate(innerSphere, null);
+        float inScale = inRadius * 2;
         _radiusIndicators[0].transform.localScale = new Vector3(inScale, 0.1f, inScale);
-        float halfScale = transform.localScale.y / 2;
-        _radiusIndicators[0].transform.position -= new Vector3(0, halfScale, 0);
+        //float halfScale = _endYScale / 2;
+        _radiusIndicators[0].transform.position = transform.position;
 
-        _radiusIndicators[1] = Instantiate(outerSphere, transform);
-        float outScale = outRadius / 5;
+        _radiusIndicators[1] = Instantiate(outerSphere, null);
+        float outScale = outRadius * 2;
         _radiusIndicators[1].transform.localScale = new Vector3(outScale, 0.1f, outScale);
-        _radiusIndicators[1].transform.position -= new Vector3(0, halfScale, 0);
+        _radiusIndicators[1].transform.position = transform.position;
 
         _built = false;
+
+        _buildingPlacementManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<BuildingPlacementManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Shows building zones
-        if (Input.GetKey(KeyCode.S))
+        //if (Input.GetKey(KeyCode.S))
+        if (_buildingPlacementManager.selectionButtonPressed)
         {
             _radiusIndicators[0].SetActive(true);
             _radiusIndicators[1].SetActive(true);
@@ -61,12 +65,18 @@ public class BuildingScript : MonoBehaviour
             if (other.gameObject.tag == "Worker")
             {
                 _timeBuilt += 1 * Time.deltaTime;
+                Debug.Log(_timeBuilt);
                 float yScale = (_endYScale / BuildTime) * _timeBuilt;
+                if(yScale < 0.5f)
+                {
+                    yScale = 0.5f;
+                }
                 transform.localScale = new Vector3(transform.localScale.x, yScale, transform.localScale.z);
                 transform.position = new Vector3(transform.position.x, yScale / 2, transform.position.z);
                 if (_timeBuilt > BuildTime)
                 {
                     _built = true;
+                    Debug.Log("Built");
                 }
             }
         }
@@ -75,5 +85,12 @@ public class BuildingScript : MonoBehaviour
     public bool Built()
     {
         return _built;
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.3f);
+        Gizmos.DrawSphere(transform.position, inRadius);
+        Gizmos.DrawSphere(transform.position, outRadius);
     }
 }

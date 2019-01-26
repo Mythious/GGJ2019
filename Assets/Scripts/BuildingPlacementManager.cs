@@ -16,6 +16,11 @@ public class BuildingPlacementManager : MonoBehaviour
     [Header("Gizmo Stuff")]
     public float Radius = 10;
     public Color Colour = new Color(1, 0, 0, 0.1f);
+
+    [HideInInspector]
+    public bool selectionButtonPressed;
+    public int BuildingToBuildIndex = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -25,7 +30,7 @@ public class BuildingPlacementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (selectionButtonPressed)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -39,13 +44,13 @@ public class BuildingPlacementManager : MonoBehaviour
                         return;
                     }
                     // Do something with the object that was hit by the raycast.
-                    AddBuilding(housePrefab[0], hit.point);
+                    AddBuilding(housePrefab[BuildingToBuildIndex], hit.point);
                 }
             } 
         }
     }
 
-    void AddBuilding(GameObject prefab, Vector3 position)
+    public void AddBuilding(GameObject prefab, Vector3 position)
     {
         BuildingScript bs = prefab.GetComponent<BuildingScript>();//heh
         if (bs == null || !CanBuild(position, bs.inRadius, bs.outRadius))

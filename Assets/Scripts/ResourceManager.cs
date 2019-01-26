@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.ResourceTypes;
 
-public static class ResourceManager
+public class ResourceManager : MonoBehaviour
 {
 
-    private static Dictionary<ResourceTypes, int> resources;
+    private Dictionary<ResourceTypes, int> resources = new Dictionary<ResourceTypes, int>();
 
     /// <summary>
     /// Add some amount of a resource
     /// </summary>
     /// <param name="type"> the type of resource </param>
     /// <param name="amount"> the amount of resource to add </param>
-    public static void AddResource(ResourceTypes type, int amount)
+    public void AddResource(ResourceTypes type, int amount)
     {
         if (resources.ContainsKey(type))
         {
@@ -31,7 +31,7 @@ public static class ResourceManager
     /// <param name="type"> the type of resource </param>
     /// <param name="amount"> the amount of resource to remove </param>
     /// <returns> bool marks if there was enough resource to spend </returns>
-    public static bool RemoveResource(ResourceTypes type, int amount)
+    public bool RemoveResource(ResourceTypes type, int amount)
     {
         if (resources.ContainsKey(type))
         {
