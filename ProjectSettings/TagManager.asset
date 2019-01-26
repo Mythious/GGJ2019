@@ -6,6 +6,7 @@ TagManager:
   tags:
   - house
   - Terrain
+  - resource
   - MapManager
   - Worker
   layers:

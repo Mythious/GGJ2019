@@ -7,6 +7,7 @@ namespace Assets.Scripts.ResourceTypes
 {
     public enum ResourceTypes
     {
+        NONE,
         FOOD,
         WOOD,
         STONE
