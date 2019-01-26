@@ -9,6 +9,7 @@ TagManager:
   - resource
   - MapManager
   - Worker
+  - Store
   layers:
   - Default
   - TransparentFX

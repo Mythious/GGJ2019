@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114921653044845590}
   - component: {fileID: 114492730085199186}
   - component: {fileID: 114232683556529774}
+  - component: {fileID: 114674834707858798}
+  - component: {fileID: 114203289085559176}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: MapManager
@@ -42,6 +44,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114203289085559176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059034859642088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86cf4c8839648e42a070b5097281090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114232683556529774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +80,17 @@ MonoBehaviour:
   FoodPerPerson: 1
   TickTime: 3
   Food: 100
+--- !u!114 &114674834707858798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059034859642088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0cbc97e77d0e84e871702afa3c6f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114921653044845590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housePrefab:
   - {fileID: 1593410935684236, guid: 23a90fd1c36f6864c824265fa4da1602, type: 2}
+  - {fileID: 1872365406048768, guid: 73ed3210287a9894f8fef8346b4d7a99, type: 2}
   buildings: []
   Radius: 25
   Colour: {r: 0.18177521, g: 1, b: 0, a: 0.30588236}
+  selectionButtonPressed: 0
+  BuildingToBuildIndex: 0
