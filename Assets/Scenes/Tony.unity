@@ -199,7 +199,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4349725141403514, guid: bb28dbed97b11924c8925018f164bf0a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4349725141403514, guid: bb28dbed97b11924c8925018f164bf0a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -207,7 +207,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349725141403514, guid: bb28dbed97b11924c8925018f164bf0a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 4.22
+      value: 3.74
       objectReference: {fileID: 0}
     - target: {fileID: 4349725141403514, guid: bb28dbed97b11924c8925018f164bf0a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -227,6 +227,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4349725141403514, guid: bb28dbed97b11924c8925018f164bf0a, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23316661061660142, guid: bb28dbed97b11924c8925018f164bf0a,
+        type: 2}
+      propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -261,7 +266,7 @@ GameObject:
   - component: {fileID: 1294188610}
   - component: {fileID: 1294188609}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PlacedHouse
   m_TagString: house
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +333,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1294188608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 1, z: 3.37}
+  m_LocalPosition: {x: -0.3, y: 1, z: 3.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
