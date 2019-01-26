@@ -10,8 +10,8 @@ public class BuildingPlacementManager : MonoBehaviour
 
     public List<GameObject> buildings = new List<GameObject>();
 
-    [Header("RayCastingStuff")]
-    public Camera camera;
+    //[Header("RayCastingStuff")]
+    private Camera camera;
 
     [Header("Gizmo Stuff")]
     public float Radius = 10;
@@ -19,7 +19,7 @@ public class BuildingPlacementManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
