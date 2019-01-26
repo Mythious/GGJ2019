@@ -74,6 +74,10 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// update the resources in the UI
+    /// </summary>
+    /// <param name="inputType"></param>
     private void UpdateResource(ResourceTypes inputType)
     {
         switch (inputType)
