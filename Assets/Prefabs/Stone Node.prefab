@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4904714949086786}
   - component: {fileID: 33732302087614204}
   - component: {fileID: 23660214435125274}
-  - component: {fileID: 135719479323706052}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4476055152949336}
   - component: {fileID: 33352624515009874}
   - component: {fileID: 23850531372220596}
-  - component: {fileID: 135484539436709828}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -57,7 +55,6 @@ GameObject:
   - component: {fileID: 4884610847288502}
   - component: {fileID: 33011668526435282}
   - component: {fileID: 23974097491755868}
-  - component: {fileID: 135501576463312952}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -77,7 +74,7 @@ GameObject:
   - component: {fileID: 114083200194731244}
   m_Layer: 0
   m_Name: Stone Node
-  m_TagString: Untagged
+  m_TagString: resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +89,6 @@ GameObject:
   - component: {fileID: 4627346695724070}
   - component: {fileID: 33620389704845796}
   - component: {fileID: 23120283623792546}
-  - component: {fileID: 135879133837761626}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -125,7 +121,6 @@ GameObject:
   - component: {fileID: 4379401971665092}
   - component: {fileID: 33012902652239808}
   - component: {fileID: 23081276421654350}
-  - component: {fileID: 135083580089387682}
   m_Layer: 0
   m_Name: Sphere (5)
   m_TagString: Untagged
@@ -143,7 +138,6 @@ GameObject:
   - component: {fileID: 4906206846996338}
   - component: {fileID: 33517188555696986}
   - component: {fileID: 23077625535922304}
-  - component: {fileID: 135822960246671338}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -525,22 +519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689e3d9fccba3354a9dfe7154fea9b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceType: 2
+  resourceType: 3
   harvestTime: 0
   availableResource: 5
-  harvesting: 0
---- !u!135 &135083580089387682
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1822036261616594}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  gatherers: 0
 --- !u!135 &135357763494181632
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -548,68 +530,8 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496930463229012}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135484539436709828
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1263337332672528}
-  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135501576463312952
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1393355590354146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135719479323706052
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147146177142808}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135822960246671338
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990312011924716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135879133837761626
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1521307759662190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
