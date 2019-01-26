@@ -19,6 +19,7 @@ public class BuildingPlacementManager : MonoBehaviour
 
     [HideInInspector]
     public bool selectionButtonPressed;
+    public int BuildingToBuildIndex = 0;
 
     // Use this for initialization
     void Start()
@@ -43,7 +44,7 @@ public class BuildingPlacementManager : MonoBehaviour
                         return;
                     }
                     // Do something with the object that was hit by the raycast.
-                    AddBuilding(housePrefab[0], hit.point);
+                    AddBuilding(housePrefab[BuildingToBuildIndex], hit.point);
                 }
             } 
         }

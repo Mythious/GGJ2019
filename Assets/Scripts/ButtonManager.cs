@@ -42,10 +42,10 @@ public class ButtonManager : MonoBehaviour
         switch (clickedButton.name)
         {
             case "BuildingButton(1)":
-
+                buildingManager.BuildingToBuildIndex = 0;
                 break;
             case "BuildingButton(2)":
-
+                buildingManager.BuildingToBuildIndex = 1;
                 break;
             case "BuildingButton(3)":
 

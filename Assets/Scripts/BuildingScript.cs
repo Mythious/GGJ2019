@@ -86,4 +86,11 @@ public class BuildingScript : MonoBehaviour
     {
         return _built;
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.3f);
+        Gizmos.DrawSphere(transform.position, inRadius);
+        Gizmos.DrawSphere(transform.position, outRadius);
+    }
 }
