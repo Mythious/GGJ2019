@@ -20,9 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4053820425503210}
   - component: {fileID: 114921653044845590}
+  - component: {fileID: 114492730085199186}
+  - component: {fileID: 114232683556529774}
   m_Layer: 0
-  m_Name: PlacementManager
-  m_TagString: Untagged
+  m_Name: MapManager
+  m_TagString: MapManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,12 +36,38 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059034859642088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.677311, y: 5.4269533, z: 5.1932774}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114232683556529774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059034859642088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5120518779c6b6f43b08a242c72b5ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114492730085199186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059034859642088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef6bcd5c1dfda4419c37c58f1f88fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodPerPerson: 1
+  Population: 10
+  TickTime: 1
+  Food: 10
 --- !u!114 &114921653044845590
 MonoBehaviour:
   m_ObjectHideFlags: 1
