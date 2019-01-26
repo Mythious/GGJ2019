@@ -481,9 +481,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135595432453374580, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
+    - {fileID: 64538321313786512, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1426714403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
+    type: 2}
+  m_PrefabInternal: {fileID: 1426714402}
+--- !u!114 &1426714404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426714403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee50d5db2e5dcd42b9acd6b5ac77153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carryCapacity: 10
+  amountHeld: 0
+  typeHeld: 0
+  isGathering: 0
+  nodeHarvesting: {fileID: 0}
 --- !u!1001 &1520505748
 Prefab:
   m_ObjectHideFlags: 0
@@ -523,7 +546,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135357763494181632, guid: aa55f906649c5594d8ac06321c3c39f1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496930463229012, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+      propertyPath: m_TagString
+      value: resource
+      objectReference: {fileID: 0}
+    - target: {fileID: 135484539436709828, guid: aa55f906649c5594d8ac06321c3c39f1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083200194731244, guid: aa55f906649c5594d8ac06321c3c39f1,
+        type: 2}
+      propertyPath: resourceType
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135083580089387682, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+    - {fileID: 135501576463312952, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+    - {fileID: 135879133837761626, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+    - {fileID: 135822960246671338, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+    - {fileID: 135719479323706052, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
+    - {fileID: 135484539436709828, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1728750040
@@ -577,7 +625,27 @@ Prefab:
       value: 
       objectReference: {fileID: 114641325156589726, guid: 7eaccdc49d6c54649b67c04eb20c7904,
         type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 136965246940398214, guid: 93a7128e28703bb4985586e947756ba5,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916738394267678, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+      propertyPath: m_TagString
+      value: resource
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396282030643756, guid: 93a7128e28703bb4985586e947756ba5,
+        type: 2}
+      propertyPath: resourceType
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 193584149390479502, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+    - {fileID: 33814064125087960, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+    - {fileID: 23891031094579706, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+    - {fileID: 23787250867564914, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+    - {fileID: 33344149835638266, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
+    - {fileID: 193480773913506382, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1817836096
