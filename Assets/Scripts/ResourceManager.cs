@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Assets.Scripts.ResourceTypes;
 
 public class ResourceManager : MonoBehaviour
 {
 
     private Dictionary<ResourceTypes, int> resources = new Dictionary<ResourceTypes, int>();
-
+    public Text StoneText, WoodText, FoodText;
     /// <summary>
     /// Add some amount of a resource
     /// </summary>
@@ -18,10 +19,12 @@ public class ResourceManager : MonoBehaviour
         if (resources.ContainsKey(type))
         {
             resources[type] += amount;
+            UpdateResource(type);
         }
         else
         {
             resources.Add(type, amount);
+            UpdateResource(type);
         }
     }
 
@@ -38,6 +41,7 @@ public class ResourceManager : MonoBehaviour
             if (resources[type] > 0 + amount)
             {
                 resources[type] -= amount;
+                UpdateResource(type);
                 return true;
             }
             else
@@ -51,5 +55,20 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    private void UpdateResource(ResourceTypes inputType)
+    {
+        switch (inputType)
+        {
+            case ResourceTypes.FOOD:
+                FoodText.text = "Food : " + resources[inputType];
+                break;
+            case ResourceTypes.STONE:
+                StoneText.text = "Stone : " + resources[inputType];
+                break;
+            case ResourceTypes.WOOD:
+                WoodText.text = "Wood : " + resources[inputType];
+                break;
+        }
 
+    }
 }

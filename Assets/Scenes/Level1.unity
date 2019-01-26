@@ -1740,7 +1740,7 @@ MonoBehaviour:
   scrollSpeed: 20
   minY: 20
   maxY: 120
-  screenLimit: {x: 100, y: 100}
+  screenLimit: {x: 500, y: 500}
 --- !u!81 &1892001473
 AudioListener:
   m_ObjectHideFlags: 0
