@@ -311,6 +311,7 @@ MonoBehaviour:
   typeHeld: 0
   isGathering: 0
   nodeHarvesting: {fileID: 0}
+  playerAgent: {fileID: 195755399654978572}
 --- !u!114 &114851122548102200
 MonoBehaviour:
   m_ObjectHideFlags: 0

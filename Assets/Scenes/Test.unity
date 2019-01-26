@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 785565024}
   - component: {fileID: 785565023}
   - component: {fileID: 785565022}
-  - component: {fileID: 785565025}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -245,22 +244,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 33.61, y: 0, z: 0}
---- !u!114 &785565025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 785565021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc0900d01fb9f445b9951e89c145670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_seed: 10
-  spawnChance: 0.3
-  m_terrain: {fileID: 1783173976}
-  m_tree: {fileID: 1916738394267678, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
-  m_rock: {fileID: 1496930463229012, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
 --- !u!1 &1447625858
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,8 +310,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1783173976 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1773793731544828, guid: 92cde5f462f9d4348934e7ab308170e8,
-    type: 2}
-  m_PrefabInternal: {fileID: 638156442}
