@@ -25,20 +25,23 @@ public class BuildingPlacementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.S))
         {
-            RaycastHit hit;
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.transform.gameObject.tag != "Terrain")
+                RaycastHit hit;
+                Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    return;
+                    if (hit.transform.gameObject.tag != "Terrain")
+                    {
+                        return;
+                    }
+                    // Do something with the object that was hit by the raycast.
+                    AddBuilding(housePrefab[0], hit.point);
                 }
-                // Do something with the object that was hit by the raycast.
-                AddBuilding(housePrefab[0], hit.point);
-            }
+            } 
         }
     }
 
@@ -50,14 +53,18 @@ public class BuildingPlacementManager : MonoBehaviour
             //TODO:: Sound "NOPE"
             return;
         }
-        var newBuilding = GameObject.Instantiate(prefab, transform);
-        newBuilding.transform.position = position + new Vector3(0, newBuilding.transform.localScale.y / 2, 0);
+        var newBuilding = GameObject.Instantiate(prefab, null);
+        newBuilding.transform.position = position + new Vector3(0, 0, 0);
         buildings.Add(newBuilding);
     }
 
     bool CanBuild(Vector3 position, float inRadius, float outRadius)
     {
         bool isValid = false;
+        if(buildings.Count == 0)
+        {
+            return true;
+        }
         foreach (var b in buildings)
         {
             BuildingScript bs = b.GetComponent<BuildingScript>();//heh
