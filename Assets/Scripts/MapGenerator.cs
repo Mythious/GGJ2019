@@ -8,7 +8,11 @@ public class MapGenerator : MonoBehaviour
     public float m_seedRock;
     public float m_seedBerries;
 
-    public float spawnChance;
+    public float spawnChanceTree;
+    public float spawnChanceBerry;
+    public float spawnChanceRock;
+
+    public float BerryToRockRatio;
 
     public GameObject m_terrain;
     public GameObject m_tree;
@@ -29,19 +33,34 @@ public class MapGenerator : MonoBehaviour
                 float jNew = (float)j / 5;
                 var perlin = Mathf.PerlinNoise(m_seedTree + iNew, m_seedTree + jNew);
 
-                if (perlin < spawnChance)
+                if (perlin < spawnChanceTree)
                 {
                     var newTree = Instantiate(m_tree);
                     newTree.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
                 }
                 else
                 {
-                    var perlinRock = Mathf.PerlinNoise(m_seedRock + iNew, m_seedRock + jNew);
+                    var rand = Random.Range(0.0f, 1.0f);
 
-                    if (perlinRock < spawnChance)
+                    if (rand <= BerryToRockRatio)
                     {
-                        var newRock = Instantiate(m_rock);
-                        newRock.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                        var perlinBerry = Mathf.PerlinNoise(m_seedBerries + iNew, m_seedBerries + jNew);
+
+                        if (perlinBerry < spawnChanceBerry)
+                        {
+                            var newBerry = Instantiate(m_berries);
+                            newBerry.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                        }
+                    }
+                    else
+                    {
+                        var perlinRock = Mathf.PerlinNoise(m_seedRock + iNew, m_seedRock + jNew);
+
+                        if (perlinRock < spawnChanceRock)
+                        {
+                            var newRock = Instantiate(m_rock);
+                            newRock.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                        }
                     }
                 }
             }
