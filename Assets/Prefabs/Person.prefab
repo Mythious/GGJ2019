@@ -306,12 +306,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee50d5db2e5dcd42b9acd6b5ac77153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carryCapacity: 10
+  carryCapacity: 8
   amountHeld: 0
   typeHeld: 0
-  isGathering: 0
-  nodeHarvesting: {fileID: 0}
   playerAgent: {fileID: 195755399654978572}
+  isGathering: 0
 --- !u!114 &114851122548102200
 MonoBehaviour:
   m_ObjectHideFlags: 0

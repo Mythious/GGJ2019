@@ -65,7 +65,7 @@ public class Harvester : MonoBehaviour
             typeHeld = node.resourceType;
             isGathering = true;
         }
-        if (hitObject.tag == "Store")
+        if (hitObject.tag == "Store" && nodeHarvesting != null)
         {
             playerAgent.SetDestination(nodeHarvesting.transform.position);
         }
@@ -92,10 +92,13 @@ public class Harvester : MonoBehaviour
 
     public void Gather()
     {
-        int gatherAmount = nodeHarvesting.GetComponent<NodeManager>().gatherTick;
-        if (isGathering && amountHeld + gatherAmount < carryCapacity)
+        if (isGathering)
         {
-            amountHeld += gatherAmount;
+            int gatherAmount = nodeHarvesting.GetComponent<NodeManager>().gatherTick;
+            if (amountHeld + gatherAmount < carryCapacity)
+            {
+                amountHeld += gatherAmount;
+            }
         }
     }
 
