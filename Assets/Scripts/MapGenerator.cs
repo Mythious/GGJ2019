@@ -25,6 +25,10 @@ public class MapGenerator : MonoBehaviour
         var width = m_terrain.transform.localScale.x;
         var height = m_terrain.transform.localScale.z;
 
+        GameObject GameTrees = new GameObject("Trees");
+        GameObject GameRocks = new GameObject("Rocks");
+        GameObject GameBushes = new GameObject("Bushes");
+
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
@@ -37,6 +41,8 @@ public class MapGenerator : MonoBehaviour
                 {
                     var newTree = Instantiate(m_tree);
                     newTree.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                    newTree.transform.SetParent(GameTrees.transform);
+                    
                 }
                 else
                 {
@@ -50,6 +56,7 @@ public class MapGenerator : MonoBehaviour
                         {
                             var newBerry = Instantiate(m_berries);
                             newBerry.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                            newBerry.transform.SetParent(GameBushes.transform);
                         }
                     }
                     else
@@ -60,6 +67,7 @@ public class MapGenerator : MonoBehaviour
                         {
                             var newRock = Instantiate(m_rock);
                             newRock.transform.position = new Vector3((i * 10) - 500, 0, (j * 10) - 500);
+                            newRock.transform.SetParent(GameRocks.transform);
                         }
                     }
                 }
