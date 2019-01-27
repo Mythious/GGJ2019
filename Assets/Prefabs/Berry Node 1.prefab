@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 1
-  gatherTick: 0
+  gatherTick: 4
   availableResource: 50
   gatherers: 0
 --- !u!135 &135024962226217322
