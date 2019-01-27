@@ -14,9 +14,9 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Vector3 pos = transform.position;
-        pos.z = startPos.position.z - 10;
+        pos.z = startPos.position.z - 30;
         pos.x = startPos.position.x;
-        pos.y = 20f;
+        pos.y = 40f;
         transform.position = pos;
     }
 	
