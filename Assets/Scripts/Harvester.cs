@@ -12,7 +12,7 @@ public class Harvester : MonoBehaviour
     public ResourceTypes typeHeld = ResourceTypes.NONE;
     public NavMeshAgent playerAgent;
     public bool isGathering = false;
-    GameObject nodeHarvesting;
+    GameObject nodeHarvesting = null;
     GameObject MapManager;
 
     // Use this for initialization
@@ -58,7 +58,7 @@ public class Harvester : MonoBehaviour
             NodeManager node = other.GetComponent<NodeManager>();
             nodeHarvesting = hitObject;
             node.gatherers++;
-            if (typeHeld != ResourceTypes.NONE && typeHeld != node.resourceType)
+            if (typeHeld != node.resourceType)
             {
                 amountHeld = 0;
             }
@@ -92,9 +92,10 @@ public class Harvester : MonoBehaviour
 
     public void Gather()
     {
-        if (isGathering)
+        int gatherAmount = nodeHarvesting.GetComponent<NodeManager>().gatherTick;
+        if (isGathering && amountHeld + gatherAmount < carryCapacity)
         {
-            amountHeld++;
+            amountHeld += gatherAmount;
         }
     }
 

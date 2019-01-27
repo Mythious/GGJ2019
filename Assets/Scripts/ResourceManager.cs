@@ -3,12 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.ResourceTypes;
+using System;
 
 public class ResourceManager : MonoBehaviour
 {
 
     private Dictionary<ResourceTypes, int> resources = new Dictionary<ResourceTypes, int>();
     public Text StoneText, WoodText, FoodText;
+
+
+    public void Start()
+    {
+        foreach(ResourceTypes e in Enum.GetValues(typeof(ResourceTypes)))
+        {
+            resources.Add(e, 0);
+        }
+
+        AddResource(ResourceTypes.FOOD, 200);
+        AddResource(ResourceTypes.WOOD, 75);
+        AddResource(ResourceTypes.STONE, 25);
+    }
     /// <summary>
     /// Add some amount of a resource
     /// </summary>
@@ -26,6 +40,15 @@ public class ResourceManager : MonoBehaviour
             resources.Add(type, amount);
             UpdateResource(type);
         }
+    }
+
+    public int GetResourceLevel(ResourceTypes type)
+    {
+        if (!resources.ContainsKey(type))
+        {
+            resources.Add(type,0);
+        }
+        return resources[type];
     }
 
     /// <summary>
@@ -64,13 +87,22 @@ public class ResourceManager : MonoBehaviour
         switch (inputType)
         {
             case ResourceTypes.FOOD:
-                FoodText.text = "Food : " + resources[inputType];
+                if (FoodText != null)
+                {
+                    FoodText.text = "Food : " + resources[inputType];
+                }
                 break;
             case ResourceTypes.STONE:
-                StoneText.text = "Stone : " + resources[inputType];
+                if (StoneText != null)
+                {
+                    StoneText.text = "Stone : " + resources[inputType];
+                }
                 break;
             case ResourceTypes.WOOD:
-                WoodText.text = "Wood : " + resources[inputType];
+                if (WoodText != null)
+                {
+                    WoodText.text = "Wood : " + resources[inputType];
+                }
                 break;
         }
 

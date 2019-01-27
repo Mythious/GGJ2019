@@ -8,17 +8,19 @@ public class FoodTicker : MonoBehaviour
     public float FoodPerPerson;
     public float TickTime;
 
-    [Header("Test Variables")]
-    public int Food;
+    //[Header("Test Variables")]
+    //public int Food;
 
 
 
     private float _timeSinceLastTick = 0;
     private PopulationScript _popScript;
+    private ResourceManager _resourceManager;
     // Use this for initialization
     void Start()
     {
         _popScript = GetComponent<PopulationScript>();
+        _resourceManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<ResourceManager>();
     }
 
     // Update is called once per frame
@@ -34,9 +36,11 @@ public class FoodTicker : MonoBehaviour
 
     void TickFood()
     {
+        int Food = _resourceManager.GetResourceLevel(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD);
         int foodDepletion = (int)(FoodPerPerson * _popScript.CurrentPopulation());
-        Food -= foodDepletion;
-        if(Food < 0)
+        _resourceManager.AddResource(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD, -foodDepletion);
+        Food = _resourceManager.GetResourceLevel(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD);
+        if (Food < 0)
         {
             //KILL DEATH MURDER
             int popDepletion = (int)(Food / FoodPerPerson);
@@ -44,8 +48,8 @@ public class FoodTicker : MonoBehaviour
             {
                 _popScript.RemovePop();
             }
-            Food = 0;
-            if(_popScript.CurrentPopulation() < 0)
+            _resourceManager.AddResource(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD, -Food);
+            if (_popScript.CurrentPopulation() < 0)
             {
                 //Ya dead son
             }

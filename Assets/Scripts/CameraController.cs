@@ -9,11 +9,16 @@ public class CameraController : MonoBehaviour {
     public float minY = 20f;
     public float maxY = 120f;
     public Vector2 screenLimit;
+    public Transform startPos;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        Vector3 pos = transform.position;
+        pos.z = startPos.position.z - 10;
+        pos.x = startPos.position.x;
+        pos.y = 20f;
+        transform.position = pos;
+    }
 	
 	// Update is called once per frame
 	void Update ()
