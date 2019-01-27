@@ -696,6 +696,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housePrefab: []
   buildings: []
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   Radius: 10
   Colour: {r: 1, g: 0, b: 0, a: 0.1}
   selectionButtonPressed: 0

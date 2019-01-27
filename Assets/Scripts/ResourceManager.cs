@@ -41,6 +41,11 @@ public class ResourceManager : MonoBehaviour
             resources.Add(type, amount);
             UpdateResource(type);
         }
+        if(resources[type] < 0)
+        {
+            resources[type] = 0;
+            UpdateResource(type);
+        }
     }
 
     public int GetResourceLevel(ResourceTypes type)

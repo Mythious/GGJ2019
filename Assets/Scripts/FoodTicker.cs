@@ -44,10 +44,9 @@ public class FoodTicker : MonoBehaviour
         {
             //KILL DEATH MURDER
             int popDepletion = (int)(Food / FoodPerPerson);
-            for(int i = 0; i < Mathf.Abs(popDepletion); i++)
-            {
-                _popScript.RemovePop();
-            }
+            
+             _popScript.RemovePop();
+            
             _resourceManager.AddResource(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD, -Food);
             if (_popScript.CurrentPopulation() < 0)
             {
