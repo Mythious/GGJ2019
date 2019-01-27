@@ -21,7 +21,7 @@ public class ResourceManager : MonoBehaviour
         }
 
         AddResource(ResourceTypes.FOOD, 200);
-        AddResource(ResourceTypes.WOOD, 75);
+        AddResource(ResourceTypes.WOOD, 125);
         AddResource(ResourceTypes.STONE, 25);
     }
     /// <summary>

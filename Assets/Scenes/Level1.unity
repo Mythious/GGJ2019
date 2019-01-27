@@ -826,10 +826,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
-      propertyPath: m_Name
-      value: Person
-      objectReference: {fileID: 0}
+    - target: {fileID: 114252587024374272, guid: 5023bc93b996459479407abf13d5ef52,
+        type: 2}
+      propertyPath: m_fogPlane
+      value: 
+      objectReference: {fileID: 1747476815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
   m_IsPrefabAsset: 0
@@ -1956,7 +1957,7 @@ Prefab:
     - target: {fileID: 114492730085199186, guid: 65c80e6ae45318f4a8453cd1f9b426e9,
         type: 2}
       propertyPath: FoodPerPerson
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114232683556529774, guid: 65c80e6ae45318f4a8453cd1f9b426e9,
         type: 2}
@@ -2409,7 +2410,7 @@ GameObject:
   - component: {fileID: 1747476816}
   m_Layer: 12
   m_Name: FogPlane
-  m_TagString: Untagged
+  m_TagString: Fog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2577,7 +2578,6 @@ GameObject:
   - component: {fileID: 1892001471}
   - component: {fileID: 1892001470}
   - component: {fileID: 1892001476}
-  - component: {fileID: 1892001477}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2713,23 +2713,6 @@ MonoBehaviour:
   m_tree: {fileID: 1916738394267678, guid: 93a7128e28703bb4985586e947756ba5, type: 2}
   m_rock: {fileID: 1496930463229012, guid: aa55f906649c5594d8ac06321c3c39f1, type: 2}
   m_berries: {fileID: 1711953258238658, guid: d50d5dcb88167ee44b12aa8fa80c052c, type: 2}
---- !u!114 &1892001477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1892001469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7c190e7a3400b49970ed7feb4a58ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fogPlane: {fileID: 1747476815}
-  m_player: {fileID: 1817391741}
-  m_fogLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  m_radius: 100
 --- !u!1 &1937382751
 GameObject:
   m_ObjectHideFlags: 0
