@@ -92,7 +92,6 @@ public class ResourceManager : MonoBehaviour
                 {
                     FoodText.text = "Food : " + resources[inputType];
                     gameOverHandler.UpdateFood(resources[inputType]);
-                    gameOverHandler.DeathByFood(resources[inputType]);
                 }
                 break;
             case ResourceTypes.STONE:
