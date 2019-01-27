@@ -49,7 +49,7 @@ public class FogOfWar : MonoBehaviour
 
         for (int i = 0; i < m_colours.Length; i++)
         {
-            m_colours[i] = Color.black;
+            m_colours[i] = Color.white;
         }
         UpdateColour();
     }

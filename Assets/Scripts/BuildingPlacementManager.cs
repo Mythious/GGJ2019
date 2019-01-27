@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Assets.Scripts.ResourceTypes;
 
 
 public class BuildingPlacementManager : MonoBehaviour
@@ -25,11 +26,13 @@ public class BuildingPlacementManager : MonoBehaviour
     [HideInInspector]
     public bool selectionButtonPressed;
     public int BuildingToBuildIndex = 0;
+    ResourceManager rm = null;
 
     // Use this for initialization
     void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        rm = GameObject.FindGameObjectWithTag("MapManager").GetComponent<ResourceManager>();
     }
 
     // Update is called once per frame
@@ -67,12 +70,38 @@ public class BuildingPlacementManager : MonoBehaviour
         }
         var newBuilding = GameObject.Instantiate(prefab, null);
         newBuilding.transform.position = position + new Vector3(0, 0, 0);
+        if (BuildingToBuildIndex == 0)
+        {
+            rm.RemoveResource(ResourceTypes.WOOD, 50);
+            rm.RemoveResource(ResourceTypes.FOOD, 10);
+        }
+        else if (BuildingToBuildIndex == 1)
+        {
+            rm.RemoveResource(ResourceTypes.WOOD, 75);
+            rm.RemoveResource(ResourceTypes.STONE, 25);
+        }
         buildings.Add(newBuilding);
     }
 
     bool CanBuild(Vector3 position, float inRadius, float outRadius)
     {
         bool isValid = false;
+        if (BuildingToBuildIndex == 0)
+        {
+            if (!(rm.GetResourceLevel(ResourceTypes.WOOD) >= 50 && rm.GetResourceLevel(ResourceTypes.FOOD) >= 10))
+            { 
+                return false;
+            }
+        }
+        else if (BuildingToBuildIndex == 1)
+        {
+            if (!(rm.GetResourceLevel(ResourceTypes.WOOD) >= 75 && rm.GetResourceLevel(ResourceTypes.STONE) >= 25))
+            {
+                return false;
+            }
+        }
+
+
         if (buildings.Count == 0)
         {
             return true;
@@ -91,6 +120,7 @@ public class BuildingPlacementManager : MonoBehaviour
                 return false;
             }
         }
+
 
         return isValid;
     }
