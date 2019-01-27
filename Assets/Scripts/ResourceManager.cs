@@ -10,11 +10,12 @@ public class ResourceManager : MonoBehaviour
 
     private Dictionary<ResourceTypes, int> resources = new Dictionary<ResourceTypes, int>();
     public Text StoneText, WoodText, FoodText;
-
+    private GameOverHandler gameOverHandler;
 
     public void Start()
     {
-        foreach(ResourceTypes e in Enum.GetValues(typeof(ResourceTypes)))
+        gameOverHandler = GameObject.FindGameObjectWithTag("MapManager").GetComponent<GameOverHandler>();
+        foreach (ResourceTypes e in Enum.GetValues(typeof(ResourceTypes)))
         {
             resources.Add(e, 0);
         }
@@ -90,6 +91,7 @@ public class ResourceManager : MonoBehaviour
                 if (FoodText != null)
                 {
                     FoodText.text = "Food : " + resources[inputType];
+                    gameOverHandler.DeathByFood(resources[inputType]);
                 }
                 break;
             case ResourceTypes.STONE:
@@ -107,4 +109,5 @@ public class ResourceManager : MonoBehaviour
         }
 
     }
+
 }
