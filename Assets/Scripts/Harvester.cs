@@ -40,7 +40,6 @@ public class Harvester : MonoBehaviour
             else if (amountHeld + nodeHarvesting.GetComponent<NodeManager>().gatherTick > carryCapacity )
             {
                 isGathering = false;
-                nodeHarvesting.GetComponent<NodeManager>().gatherers--;
                 //find nearest store
                 GameObject nearestStore = MapManager.GetComponent<StoreManager>().NearestStore(transform.position);
                 Debug.Log("Nearest Store = " + nearestStore.transform.position);
