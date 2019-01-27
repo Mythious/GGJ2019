@@ -67,7 +67,7 @@ public class ResourceManager : MonoBehaviour
     {
         if (resources.ContainsKey(type))
         {
-            if (resources[type] > 0 + amount)
+            if (resources[type] >= 0 + amount)
             {
                 resources[type] -= amount;
                 UpdateResource(type);
