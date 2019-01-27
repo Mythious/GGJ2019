@@ -8,10 +8,12 @@ public class PopulationScript : MonoBehaviour
     private int _currentPopulation;
     private List<GameObject> _population = new List<GameObject>();
     public Text populationText;
+    private GameOverHandler gameOverHandler;
 
     // Use this for initialization
     void Start()
     {
+        gameOverHandler = GameObject.FindGameObjectWithTag("MapManager").GetComponent<GameOverHandler>();
         var workers = GameObject.FindGameObjectsWithTag("Worker");
         foreach(GameObject worker in workers)
         {
@@ -50,5 +52,6 @@ public class PopulationScript : MonoBehaviour
     private void UpdatePopulationCount()
     {
         populationText.text = "Population : " + CurrentPopulation();
+        gameOverHandler.UpdatePopulation(CurrentPopulation());
     }
 }

@@ -91,6 +91,7 @@ public class ResourceManager : MonoBehaviour
                 if (FoodText != null)
                 {
                     FoodText.text = "Food : " + resources[inputType];
+                    gameOverHandler.UpdateFood(resources[inputType]);
                     gameOverHandler.DeathByFood(resources[inputType]);
                 }
                 break;
@@ -98,12 +99,14 @@ public class ResourceManager : MonoBehaviour
                 if (StoneText != null)
                 {
                     StoneText.text = "Stone : " + resources[inputType];
+                    gameOverHandler.UpdateStone(resources[inputType]);
                 }
                 break;
             case ResourceTypes.WOOD:
                 if (WoodText != null)
                 {
                     WoodText.text = "Wood : " + resources[inputType];
+                    gameOverHandler.UpdateWood(resources[inputType]);
                 }
                 break;
         }
