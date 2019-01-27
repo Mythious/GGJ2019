@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class BuildingPlacementManager : MonoBehaviour
@@ -36,17 +38,19 @@ public class BuildingPlacementManager : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit))
+                if (!EventSystem.current.IsPointerOverGameObject(-1))
                 {
-                    if (hit.transform.gameObject.tag != "Terrain")
+                    if (Physics.Raycast(ray, out hit))
                     {
-                        return;
+                        if (hit.transform.gameObject.tag != "Terrain")
+                        {
+                            return;
+                        }
+                        // Do something with the object that was hit by the raycast.
+                        AddBuilding(housePrefab[BuildingToBuildIndex], hit.point);
                     }
-                    // Do something with the object that was hit by the raycast.
-                    AddBuilding(housePrefab[BuildingToBuildIndex], hit.point);
                 }
-            } 
+            }
         }
     }
 
@@ -66,7 +70,7 @@ public class BuildingPlacementManager : MonoBehaviour
     bool CanBuild(Vector3 position, float inRadius, float outRadius)
     {
         bool isValid = false;
-        if(buildings.Count == 0)
+        if (buildings.Count == 0)
         {
             return true;
         }
@@ -79,7 +83,7 @@ public class BuildingPlacementManager : MonoBehaviour
             {
                 isValid = true;
             }
-            if(magnitude < bs.inRadius + inRadius )
+            if (magnitude < bs.inRadius + inRadius)
             {
                 return false;
             }
