@@ -10,6 +10,14 @@ public class FogOfWar : MonoBehaviour
     public float m_radius = 5f;
     GameObject m_camera;
 
+    IEnumerator UpdateFog()
+    {
+        while (true)
+        {
+            FogTick();
+            yield return new WaitForSeconds(1);
+        }
+    }
 
     private float m_radiusSquared { get { return m_radius * m_radius; } }
 
@@ -20,10 +28,11 @@ public class FogOfWar : MonoBehaviour
     void Start()
     {
         Initialise();
+        StartCoroutine(UpdateFog());
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FogTick()
     {
         Ray ray = new Ray(m_camera.transform.position, transform.position - m_camera.transform.position);
         RaycastHit hit;
@@ -41,6 +50,12 @@ public class FogOfWar : MonoBehaviour
             }
             UpdateColour();
         }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 
     void Initialise()
