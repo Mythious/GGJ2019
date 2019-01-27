@@ -40,7 +40,7 @@ public class FoodTicker : MonoBehaviour
         int foodDepletion = (int)(FoodPerPerson * _popScript.CurrentPopulation());
         _resourceManager.AddResource(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD, -foodDepletion);
         Food = _resourceManager.GetResourceLevel(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD);
-        if (Food < 0)
+        if (Food <= 0)
         {
             //KILL DEATH MURDER
             int popDepletion = (int)(Food / FoodPerPerson);
@@ -48,7 +48,7 @@ public class FoodTicker : MonoBehaviour
              _popScript.RemovePop();
             
             _resourceManager.AddResource(Assets.Scripts.ResourceTypes.ResourceTypes.FOOD, -Food);
-            if (_popScript.CurrentPopulation() < 0)
+            if (_popScript.CurrentPopulation() <= 0)
             {
                 //Ya dead son
             }
