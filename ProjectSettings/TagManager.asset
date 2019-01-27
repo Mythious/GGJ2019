@@ -10,6 +10,7 @@ TagManager:
   - MapManager
   - Worker
   - Store
+  - Fog
   layers:
   - Default
   - TransparentFX

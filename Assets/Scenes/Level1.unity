@@ -826,6 +826,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114252587024374272, guid: 5023bc93b996459479407abf13d5ef52,
+        type: 2}
+      propertyPath: m_fogPlane
+      value: 
+      objectReference: {fileID: 1747476815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5023bc93b996459479407abf13d5ef52, type: 2}
   m_IsPrefabAsset: 0
@@ -2405,7 +2410,7 @@ GameObject:
   - component: {fileID: 1747476816}
   m_Layer: 12
   m_Name: FogPlane
-  m_TagString: Untagged
+  m_TagString: Fog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2559,28 +2564,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826776243}
   m_CullTransparentMesh: 0
---- !u!1 &1856564293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1164426893280470, guid: 5023bc93b996459479407abf13d5ef52,
-    type: 2}
-  m_PrefabInternal: {fileID: 384143864}
---- !u!114 &1856564302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1856564293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7c190e7a3400b49970ed7feb4a58ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fogPlane: {fileID: 1747476815}
-  m_player: {fileID: 1892001475}
-  m_fogLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  m_radius: 100
 --- !u!1 &1892001469
 GameObject:
   m_ObjectHideFlags: 0

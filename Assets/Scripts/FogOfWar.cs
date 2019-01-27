@@ -6,9 +6,11 @@ public class FogOfWar : MonoBehaviour
 {
 
     public GameObject m_fogPlane;
-    public Transform m_player;
     public LayerMask m_fogLayer;
     public float m_radius = 5f;
+    GameObject m_camera;
+
+
     private float m_radiusSquared { get { return m_radius * m_radius; } }
 
     private Mesh m_mesh;
@@ -23,7 +25,7 @@ public class FogOfWar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = new Ray(transform.position, m_player.position - transform.position);
+        Ray ray = new Ray(m_camera.transform.position, transform.position - m_camera.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, m_fogLayer, QueryTriggerInteraction.Collide))
         {
@@ -43,6 +45,10 @@ public class FogOfWar : MonoBehaviour
 
     void Initialise()
     {
+        m_camera = GameObject.FindGameObjectWithTag("MainCamera");
+        m_fogPlane = GameObject.FindGameObjectWithTag("Fog");
+
+
         m_mesh = m_fogPlane.GetComponent<MeshFilter>().mesh;
         m_vertices = m_mesh.vertices;
         m_colours = new Color[m_vertices.Length];
