@@ -12,6 +12,9 @@ public class BuildingPlacementManager : MonoBehaviour
 
     public List<GameObject> buildings = new List<GameObject>();
 
+    [Header("Layer Mask")]
+    public LayerMask layerMask;
+
     //[Header("RayCastingStuff")]
     private Camera camera;
 
@@ -40,7 +43,7 @@ public class BuildingPlacementManager : MonoBehaviour
                 Ray ray = camera.ScreenPointToRay(Input.mousePosition);
                 if (!EventSystem.current.IsPointerOverGameObject(-1))
                 {
-                    if (Physics.Raycast(ray, out hit))
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                     {
                         if (hit.transform.gameObject.tag != "Terrain")
                         {
