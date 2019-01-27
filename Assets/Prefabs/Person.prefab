@@ -295,6 +295,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   playerAgent: {fileID: 195755399654978572}
+  bloom: {fileID: 1161083074887320, guid: 1b3c63e85d930e042b97cd03e8f71357, type: 2}
+  timeLive: 1
 --- !u!114 &114378400773443084
 MonoBehaviour:
   m_ObjectHideFlags: 1
