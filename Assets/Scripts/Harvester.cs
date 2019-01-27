@@ -37,7 +37,7 @@ public class Harvester : MonoBehaviour
                 //return to store
                 playerAgent.SetDestination(nearestStore.transform.position);
             }
-             else if (amountHeld >= carryCapacity)
+            else if (amountHeld + nodeHarvesting.GetComponent<NodeManager>().gatherTick > carryCapacity )
             {
                 isGathering = false;
                 nodeHarvesting.GetComponent<NodeManager>().gatherers--;
@@ -65,10 +65,11 @@ public class Harvester : MonoBehaviour
             typeHeld = node.resourceType;
             isGathering = true;
         }
-        if (hitObject.tag == "Store" && nodeHarvesting != null)
+        if (hitObject.tag == "Store" && nodeHarvesting != null && hitObject.GetComponent<BuildingScript>().Built())
         {
-            playerAgent.SetDestination(nodeHarvesting.transform.position);
+                playerAgent.SetDestination(nodeHarvesting.transform.position);
         }
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -95,7 +96,7 @@ public class Harvester : MonoBehaviour
         if (isGathering)
         {
             int gatherAmount = nodeHarvesting.GetComponent<NodeManager>().gatherTick;
-            if (amountHeld + gatherAmount < carryCapacity)
+            if (amountHeld + gatherAmount <= carryCapacity)
             {
                 amountHeld += gatherAmount;
             }
