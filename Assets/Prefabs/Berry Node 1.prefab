@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4680447528718430}
   - component: {fileID: 212392380966272630}
   m_Layer: 11
-  m_Name: MinimapTree
+  m_Name: MinimapBerry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ Transform:
   m_GameObject: {fileID: 1539362008189184}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.039, y: 0.566, z: -0.006}
-  m_LocalScale: {x: 0.75, y: 0.7500005, z: 0.7500005}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4215699384749000}
   m_RootOrder: 1
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 1
-  harvestTime: 0
+  gatherTick: 4
   availableResource: 50
   gatherers: 0
 --- !u!135 &135024962226217322
