@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 3
   harvestTime: 0
-  availableResource: 5
+  availableResource: 50
   gatherers: 0
 --- !u!135 &135357763494181632
 SphereCollider:
