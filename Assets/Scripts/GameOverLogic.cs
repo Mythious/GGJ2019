@@ -14,7 +14,7 @@ public class GameOverLogic : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //gameOverHandler = GameObject.FindGameObjectWithTag("MapManager").GetComponent<GameOverHandler>();
-        FailedText.text = "Success? : " + GameOverHandler.Failed;
+        FailedText.text = "Success? : " + GameOverHandler.victory;
         WoodText.text = "Wood : " + GameOverHandler.WoodAmount;
         StoneText.text = "Stone : " + GameOverHandler.StoneAmount;
         FoodText.text = "Food : " + GameOverHandler.FoodAmount;

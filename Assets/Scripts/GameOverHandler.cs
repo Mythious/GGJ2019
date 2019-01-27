@@ -9,7 +9,7 @@ public class GameOverHandler : MonoBehaviour {
     public static int StoneAmount;
     public static int FoodAmount;
     public static int PopulationAmount;
-    public static bool Failed = true;
+    public static bool victory = true;
     
     // Use this for initialization
 
@@ -30,13 +30,16 @@ public class GameOverHandler : MonoBehaviour {
         PopulationAmount = pPopulationAmount;
     }
 
-    public void DeathByFood(int pFood)
+    public void Death()
     {
-        if(pFood == 0)
-        {
-            Failed = false;
-            LoadDeathScene();
-        }
+        victory = false;
+        LoadDeathScene();
+    }
+
+    public void Victory()
+    {
+        victory = true;
+        LoadDeathScene();
     }
 
     public void LoadDeathScene()
